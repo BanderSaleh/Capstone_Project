@@ -1,0 +1,10 @@
+{
+  UserID: @product.UserID,
+  store_name: @product.store_name,
+  product_name: @product.product_name,
+  quantity: @product.quantity,
+  price: @product.price,
+  deadline: @product.deadline,
+  timestamp_store_notes: @product.timestamp_store_notes,
+  status: @product.status
+}
