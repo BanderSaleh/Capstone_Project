@@ -8,11 +8,20 @@ class Api::ProductsController < ApplicationController
     render "index.json.jb"
   end
 
+  def new
+    render 'new.html.erb'
+  end
+
   def create
     @product = Product.new(
-      name: params[:name],
-      width: params[:width],
-      height: params[:height]
+      UserID: params[:UserID],
+      store_name: params[:store_name],
+      product_name: params[:product_name],
+      quantity: params[:quantity],
+      price: params[:price],
+      deadline: params[:deadline],
+      store_notes_timestamp: params[:store_notes_timestamp],
+      status: params[:status]
     )
     @product.save
     render "show.json.jb"
@@ -23,11 +32,21 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
+  def edit
+    @product = Product.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
   def update
     @product = Product.find_by(id: params[:id])
-    @product.name = params[:name] || @product.name
-    @product.width = params[:width] || @product.width
-    @product.height = params[:height] || @product.height
+    @product.UserID = params[:UserID] || @product.UserID
+    @product.store_name = params[:store_name] || @product.store_name
+    @product.product_name = params[:product_name] || @product.product_name
+    @product.quantity = params[:quantity] || @product.quantity
+    @product.price = params[:price] || @product.price
+    @product.deadline = params[:deadline] || @product.deadline
+    @product.store_notes_timestamp = params[:store_notes_timestamp] || @product.store_notes_timestamp
+    @product.status = params[:status] || @product.status
     @product.save
     render "show.json.jb"
   end

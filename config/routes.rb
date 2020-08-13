@@ -8,8 +8,12 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
 
     get "/products" => "products#index"
-    post "/products" => "products#create"
+    get "/products/new" => "products#new"
+    # create the html ^
+    post "/products/create" => "products#create"
     get "/products/:id" => "products#show"
+    get "/products/:id/edit" => "products#edit"
+    # add html functions
     patch "/products/:id" => "products#update"
     delete "/products/:id" => "products#destroy"
   end

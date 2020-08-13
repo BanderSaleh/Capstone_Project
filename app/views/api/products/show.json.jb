@@ -5,6 +5,6 @@
   quantity: @product.quantity,
   price: @product.price,
   deadline: @product.deadline,
-  timestamp_store_notes: @product.timestamp_store_notes,
+  store_notes_timestamp: @product.store_notes_timestamp,
   status: @product.status
 }
