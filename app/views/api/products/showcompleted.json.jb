@@ -1,0 +1,14 @@
+{
+  UserID: @completed.UserID,
+  store_name: @completed.store_name,
+  product_name: @completed.product_name,
+  quantity: @completed.quantity,
+  store_notes: @completed.store_notes,
+  timestamp: @completed.timestamp,
+  store_notes_timestamp: @completed.store_notes_timestamp,
+  price: @completed.price,
+  deadline: @completed.deadline,
+  status: @completed.status
+}
+
+

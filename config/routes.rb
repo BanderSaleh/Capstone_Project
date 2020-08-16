@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
 
     get "/products" => "products#index"
+    get "/completed" => "products#indexcompleted"
     get "/products/new" => "products#new"
     # create the html ^
     post "/products/create" => "products#create"

@@ -1,0 +1,15 @@
+# app/views/api/photos/index.json.jb
+@completed.map do |complete|
+  {
+    UserID: complete.UserID,
+    store_name: complete.store_name,
+    product_name: complete.product_name,
+    quantity: complete.quantity,
+    store_notes: complete.store_notes,
+    timestamp: complete.timestamp,
+    store_notes_timestamp: complete.store_notes_timestamp,
+    price: complete.price,
+    deadline: complete.deadline,
+    status: complete.status
+  }
+end

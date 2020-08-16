@@ -8,6 +8,11 @@ class Api::ProductsController < ApplicationController
     render "index.json.jb"
   end
 
+  def indexcompleted
+    @completed = Completed.all
+    render "indexcompleted.json.jb"
+  end
+
   def new
     render 'new.html.erb'
   end
@@ -27,9 +32,31 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
+  def create_completed
+    @completed = Completed.new(
+      UserID: params[:UserID],
+      store_name: params[:store_name],
+      product_name: params[:product_name],
+      quantity: params[:quantity],
+      store_notes: params[:store_notes],
+      timestamp: params[:timestamp],
+      store_notes_timestamp: params[:store_notes_timestamp],
+      price: params[:price],
+      deadline: params[:deadline],
+      status: params[:status]
+    )
+    @completed.save
+    render "showcomplete.json.jb"
+  end
+
   def show
     @product = Product.find_by(id: params[:id])
     render "show.json.jb"
+  end
+
+  def showcompleted
+    completed = Completed.find_by(id: params[:id])
+    render "showcompleted.json.jb"
   end
 
   def edit
