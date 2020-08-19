@@ -32,6 +32,8 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
+
+
   def create_completed
     @completed = Completed.new(
       UserID: params[:UserID],
