@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get "/completed" => "products#indexcompleted"
     get "/products/new" => "products#new"
     # create the html ^
-    post "/products/create" => "products#create"
+    post "/products" => "products#create"
     get "/products/:id" => "products#show"
     get "/products/:id/edit" => "products#edit"
     # add html functions
