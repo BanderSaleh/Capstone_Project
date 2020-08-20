@@ -1,12 +1,14 @@
 # app/views/api/photos/index.json.jb
 @products.map do |product|
   {
-    UserID: product.UserID,
+    id: product.id,
     store_name: product.store_name,
     product_name: product.product_name,
     quantity: product.quantity,
     price: product.price,
     deadline: product.deadline,
+    store_notes: product.store_notes,
+    timestamp: product.timestamp,
     store_notes_timestamp: product.store_notes_timestamp,
     status: product.status
   }

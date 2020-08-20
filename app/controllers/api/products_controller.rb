@@ -68,13 +68,12 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    @product.UserID = params[:UserID] || @product.UserID
     @product.store_name = params[:store_name] || @product.store_name
     @product.product_name = params[:product_name] || @product.product_name
     @product.quantity = params[:quantity] || @product.quantity
     @product.price = params[:price] || @product.price
     @product.deadline = params[:deadline] || @product.deadline
-    @product.store_notes_timestamp = params[:store_notes_timestamp] || @product.store_notes_timestamp
+    @product.store_notes = params[:store_notes] || @product.store_notes
     @product.status = params[:status] || @product.status
     @product.save
     render "show.json.jb"
