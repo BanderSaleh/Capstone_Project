@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     post "/products/create" => "products#create"
     get "/products/:id" => "products#show"
     get "/products/:id/edit" => "products#edit"
-    # add html functions
+    # add html functions 
     patch "/products/:id" => "products#update"
     delete "/products/:id" => "products#destroy"
   end
