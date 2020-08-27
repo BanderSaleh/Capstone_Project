@@ -39,11 +39,12 @@ ActiveRecord::Schema.define(version: 2020_08_23_004640) do
     t.string "deadline"
     t.string "store_notes_timestamp"
     t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "store_notes"
     t.string "timestamp"
     t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    
   end
 
   create_table "users", force: :cascade do |t|

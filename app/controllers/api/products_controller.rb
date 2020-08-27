@@ -26,6 +26,7 @@ class Api::ProductsController < ApplicationController
       price: params[:price],
       deadline: params[:deadline],
       store_notes_timestamp: params[:store_notes_timestamp],
+      image: params[:image],
       status: params[:status]
     )
     @product.save
@@ -75,6 +76,7 @@ class Api::ProductsController < ApplicationController
     @product.deadline = params[:deadline] || @product.deadline
     @product.store_notes = params[:store_notes] || @product.store_notes
     @product.status = params[:status] || @product.status
+    @product.image = params[:image] || @product.image
     @product.save
     render "show.json.jb"
   end

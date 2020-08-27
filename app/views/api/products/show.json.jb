@@ -8,5 +8,6 @@
   store_notes: @product.store_notes,
   timestamp: @product.timestamp,
   store_notes_timestamp: @product.store_notes_timestamp,
+  image: @product.image,
   status: @product.status
 }
