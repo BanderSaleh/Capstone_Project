@@ -79,7 +79,7 @@ class Api::ProductsController < ApplicationController
     @product.deadline = params[:deadline] || @product.deadline
     @product.store_notes = params[:store_notes] || @product.store_notes
     @product.status = params[:status] || @product.status
-    @product.image = params[:image] || @product.image
+    @product.picture = params[:picture] || @product.picture
     @product.save
     render "show.json.jb"
   end
