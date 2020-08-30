@@ -26,12 +26,15 @@ class Api::ProductsController < ApplicationController
       price: params[:price],
       deadline: params[:deadline],
       store_notes_timestamp: params[:store_notes_timestamp],
-      image: params[:image],
+      picture: params[:picture],
       status: params[:status]
     )
     @product.save
     render "show.json.jb"
   end
+
+  
+  
 
 
 

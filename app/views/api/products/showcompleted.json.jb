@@ -8,6 +8,7 @@
   store_notes_timestamp: @completed.store_notes_timestamp,
   price: @completed.price,
   deadline: @completed.deadline,
+  picture: @completed.picture,
   status: @completed.status
 }
 
