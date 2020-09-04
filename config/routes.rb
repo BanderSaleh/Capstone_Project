@@ -13,11 +13,16 @@ Rails.application.routes.draw do
     # create the html ^
     post "/products" => "products#create"
     post "/products/create" => "products#create"
+    post "/completed/create" => "products#createcompleted"
     get "/products/:id" => "products#show"
-    get "/products/:id/edit" => "products#edit"
+    get "/completed/:id" => "products#showcompleted"
+    # get "/completed/:id/edit" => "products#editcompleted"
+    # get "/products/:id/edit" => "products#edit"
     # add html functions 
     patch "/products/:id" => "products#update"
+    patch "/completed/:id" => "products#updatecompleted"
     delete "/products/:id" => "products#destroy"
+    delete "/completed/:id" => "products#destroycompleted"
   end
 end
 

@@ -19,7 +19,6 @@ class Api::ProductsController < ApplicationController
 
   def create
     @product = Product.new(
-      UserID: params[:UserID],
       store_name: params[:store_name],
       product_name: params[:product_name],
       quantity: params[:quantity],
@@ -33,12 +32,8 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
-  
-  
 
-
-
-  def create_completed
+  def createcompleted
     @completed = Completed.new(
       UserID: params[:UserID],
       store_name: params[:store_name],
@@ -52,7 +47,7 @@ class Api::ProductsController < ApplicationController
       status: params[:status]
     )
     @completed.save
-    render "showcomplete.json.jb"
+    render "showcompleted.json.jb"
   end
 
   def show
@@ -60,15 +55,24 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
+
+
   def showcompleted
-    completed = Completed.find_by(id: params[:id])
+    @completed = Completed.find_by(id: params[:id])
     render "showcompleted.json.jb"
   end
 
-  def edit
-    @product = Product.find_by(id: params[:id])
-    render 'edit.html.erb'
-  end
+  # def edit
+  #   @product = Product.find_by(id: params[:id])
+  #   render 'edit.html.erb'
+  # end
+
+  # def editcompleted
+  #   @complete = Complete.find_by(id: params[:id])
+  #   render 'edit.html.erb'
+  # end
+
+  
 
   def update
     @product = Product.find_by(id: params[:id])
@@ -84,9 +88,30 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
+  def updatecompleted
+    @completed = Completed.find_by(id: params[:id])
+    @completed.store_name = params[:store_name] || @completed.store_name
+    @completed.product_name = params[:product_name] || @completed.product_name
+    @completed.quantity = params[:quantity] || @completed.quantity
+    @completed.price = params[:price] || @completed.price
+    @completed.deadline = params[:deadline] || @completed.deadline
+    @completed.store_notes = params[:store_notes] || @completed.store_notes
+    @completed.status = params[:status] || @completed.status
+    @completed.picture = params[:picture] || @completed.picture
+    @completed.save
+    render "show.json.jb"
+  end
+  
+
   def destroy
     product = Product.find_by(id: params[:id])
     product.destroy
+    render json: {message: "Product successfully destroyed."}
+  end
+
+  def destroycompleted
+    complete = Complete.find_by(id: params[:id])
+    complete.destroy
     render json: {message: "Product successfully destroyed."}
   end
 end
