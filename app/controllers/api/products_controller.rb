@@ -35,7 +35,6 @@ class Api::ProductsController < ApplicationController
 
   def createcompleted
     @completed = Completed.new(
-      UserID: params[:UserID],
       store_name: params[:store_name],
       product_name: params[:product_name],
       quantity: params[:quantity],
@@ -44,6 +43,7 @@ class Api::ProductsController < ApplicationController
       store_notes_timestamp: params[:store_notes_timestamp],
       price: params[:price],
       deadline: params[:deadline],
+      picture: params[:picture],
       status: params[:status]
     )
     @completed.save
@@ -58,7 +58,7 @@ class Api::ProductsController < ApplicationController
 
 
   def showcompleted
-    @completed = Completed.find_by(id: params[:id])
+    @complete = Completed.find_by(id: params[:id])
     render "showcompleted.json.jb"
   end
 
@@ -89,16 +89,16 @@ class Api::ProductsController < ApplicationController
   end
 
   def updatecompleted
-    @completed = Completed.find_by(id: params[:id])
-    @completed.store_name = params[:store_name] || @completed.store_name
-    @completed.product_name = params[:product_name] || @completed.product_name
-    @completed.quantity = params[:quantity] || @completed.quantity
-    @completed.price = params[:price] || @completed.price
-    @completed.deadline = params[:deadline] || @completed.deadline
-    @completed.store_notes = params[:store_notes] || @completed.store_notes
-    @completed.status = params[:status] || @completed.status
-    @completed.picture = params[:picture] || @completed.picture
-    @completed.save
+    @complete = Completed.find_by(id: params[:id])
+    @complete.store_name = params[:store_name] || @complete.store_name
+    @complete.product_name = params[:product_name] || @complete.product_name
+    @complete.quantity = params[:quantity] || @complete.quantity
+    @complete.price = params[:price] || @complete.price
+    @complete.deadline = params[:deadline] || @complete.deadline
+    @complete.store_notes = params[:store_notes] || @complete.store_notes
+    @complete.status = params[:status] || @complete.status
+    @complete.picture = params[:picture] || @complete.picture
+    @complete.save
     render "showcompleted.json.jb"
   end
   

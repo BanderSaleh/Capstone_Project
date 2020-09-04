@@ -1,15 +1,15 @@
 {
-  id: @completed.id,
-  store_name: @completed.store_name,
-  product_name: @completed.product_name,
-  quantity: @completed.quantity,
-  store_notes: @completed.store_notes,
-  timestamp: @completed.timestamp,
-  store_notes_timestamp: @completed.store_notes_timestamp,
-  price: @completed.price,
-  deadline: @completed.deadline,
-  picture: @completed.picture,
-  status: Completed
+  id: @complete.id,
+  store_name: @complete.store_name,
+  product_name: @complete.product_name,
+  quantity: @complete.quantity,
+  store_notes: @complete.store_notes,
+  timestamp: @complete.timestamp,
+  store_notes_timestamp: @complete.store_notes_timestamp,
+  price: @complete.price,
+  deadline: @complete.deadline,
+  picture: @complete.picture,
+  status: @complete.status,
 }
 
 
