@@ -9,7 +9,7 @@
   price: @completed.price,
   deadline: @completed.deadline,
   picture: @completed.picture,
-  status: @completed.status
+  status: Completed
 }
 
 

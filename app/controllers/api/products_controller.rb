@@ -99,7 +99,7 @@ class Api::ProductsController < ApplicationController
     @completed.status = params[:status] || @completed.status
     @completed.picture = params[:picture] || @completed.picture
     @completed.save
-    render "show.json.jb"
+    render "showcompleted.json.jb"
   end
   
 
