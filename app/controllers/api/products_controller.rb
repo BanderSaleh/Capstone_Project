@@ -34,7 +34,7 @@ class Api::ProductsController < ApplicationController
 
 
   def createcompleted
-    @completed = Completed.new(
+    @complete = Completed.new(
       store_name: params[:store_name],
       product_name: params[:product_name],
       quantity: params[:quantity],
@@ -46,7 +46,7 @@ class Api::ProductsController < ApplicationController
       picture: params[:picture],
       status: params[:status]
     )
-    @completed.save
+    @complete.save
     render "showcompleted.json.jb"
   end
 
