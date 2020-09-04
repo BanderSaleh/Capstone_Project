@@ -110,7 +110,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def destroycompleted
-    complete = Complete.find_by(id: params[:id])
+    complete = Completed.find_by(id: params[:id])
     complete.destroy
     render json: {message: "Product successfully destroyed."}
   end
