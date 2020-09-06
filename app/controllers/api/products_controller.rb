@@ -13,6 +13,11 @@ class Api::ProductsController < ApplicationController
     render "indexcompleted.json.jb"
   end
 
+  def indexcompleted2
+    @completed = Completed.all
+    render "indexcompleted2.json.jb"
+  end
+
   def new
     render 'new.html.erb'
   end
@@ -64,6 +69,8 @@ class Api::ProductsController < ApplicationController
     render "showcompleted.json.jb"
   end
 
+  
+
   # def edit
   #   @product = Product.find_by(id: params[:id])
   #   render 'edit.html.erb'
@@ -100,6 +107,7 @@ class Api::ProductsController < ApplicationController
     @complete.store_notes = params[:store_notes] || @complete.store_notes
     @complete.status = params[:status] || @complete.status
     @complete.picture = params[:picture] || @complete.picture
+    @complete.timestamp = params[:timestamp] || @complete.timestamp
     @complete.save
     render "showcompleted.json.jb"
   end

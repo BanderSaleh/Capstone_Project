@@ -9,11 +9,13 @@ Rails.application.routes.draw do
 
     get "/products" => "products#index"
     get "/completed" => "products#indexcompleted"
+    get "/completed/show2" => "products#indexcompleted2"
     get "/products/new" => "products#new"
     # create the html ^
     post "/products" => "products#create"
     post "/products/create" => "products#create"
     post "/completed/create" => "products#createcompleted"
+    post "/completed/create2" => "products#createcompleted2"
     get "/products/:id" => "products#show"
     get "/completed/:id" => "products#showcompleted"
     # get "/completed/:id/edit" => "products#editcompleted"

@@ -1,0 +1,8 @@
+# app/views/api/photos/index.json.jb
+@completed.map do |complete|
+  {
+    # id: complete.id,
+    quantity: complete.quantity,
+    timestamp: complete.timestamp,
+  }
+end
