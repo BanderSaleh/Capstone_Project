@@ -24,6 +24,8 @@ class Api::ProductsController < ApplicationController
       quantity: params[:quantity],
       price: params[:price],
       deadline: params[:deadline],
+      store_notes: params[:store_notes],
+      timestamp: params[:timestamp],
       store_notes_timestamp: params[:store_notes_timestamp],
       picture: params[:picture],
       status: params[:status]
