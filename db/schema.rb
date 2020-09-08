@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_163824) do
+ActiveRecord::Schema.define(version: 2020_09_08_054657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_163824) do
     t.string "store_notes"
     t.string "timestamp"
     t.string "picture"
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|
