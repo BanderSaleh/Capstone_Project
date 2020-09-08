@@ -24,5 +24,8 @@ Rails.application.routes.draw do
     delete "/products/:id" => "products#destroy"
     delete "/completed/:id" => "products#destroycompleted"
   end
+
+  root 'application#index'
+  get '/*path', to: 'application#index'
 end
 
