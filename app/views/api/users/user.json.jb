@@ -1,8 +1,8 @@
 
 @users.map do |user|
   {
-    id: users.id
-    name: users.name
-    email: users.email
+    id: user.id,
+    name: user.name,
+    email: user.email,
   }
 end
