@@ -20,11 +20,11 @@ class Api::UsersController < ApplicationController
 
     # if user.find_by(id: 1)
 
-    render json: { message: "User Logged In successfully" }
+    # render json: { message: "User Logged In successfully" }
 
     # Can not display info about signed in user!
-
-    # render "user.json.jb"
+    @user = User.find_by(id: params[:id])
+    render "user.json.jb"
 
     # @product = Product.find_by(current_user)
     # render "user.json.jb"
@@ -32,7 +32,7 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    render "user.json.jb"
+    render "users.json.jb"
   end
   
 end
