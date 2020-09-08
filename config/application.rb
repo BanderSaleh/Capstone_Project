@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require "rails"
+require_relative "../lib/backport_rails_six_credentials"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
