@@ -71,18 +71,6 @@ class Api::ProductsController < ApplicationController
 
   
 
-  # def edit
-  #   @product = Product.find_by(id: params[:id])
-  #   render 'edit.html.erb'
-  # end
-
-  # def editcompleted
-  #   @complete = Complete.find_by(id: params[:id])
-  #   render 'edit.html.erb'
-  # end
-
-  
-
   def update
     @product = Product.find_by(id: params[:id])
     @product.store_name = params[:store_name] || @product.store_name
