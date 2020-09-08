@@ -1,6 +1,6 @@
 class CreateProducts < ActiveRecord::Migration[6.0]
   def change
-    create_table :products, do |t|
+    create_table :products do |t|
       t.integer :UserID
       t.string :store_name
       t.string :product_name
@@ -16,9 +16,5 @@ class CreateProducts < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end      
-  end
-
-
-    
   end
 end
