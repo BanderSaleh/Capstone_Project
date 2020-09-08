@@ -51,3 +51,4 @@ gem 'http'
 gem 'rack-cors'
 gem 'jb'
 
+gem 'pg', group: :production
