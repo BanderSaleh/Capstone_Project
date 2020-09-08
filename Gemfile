@@ -51,6 +51,8 @@ gem 'http'
 gem 'rack-cors'
 gem 'jb'
 
+gem 'rails_12factor'
+
 gem 'pg'
 
 # gem 'pg', group: :production
