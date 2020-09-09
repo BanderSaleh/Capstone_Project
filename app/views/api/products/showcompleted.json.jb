@@ -10,6 +10,7 @@
   deadline: @complete.deadline,
   picture: @complete.picture,
   status: @complete.status,
+  user_id: @complete.user_id,
 }
 
 

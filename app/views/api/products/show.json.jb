@@ -9,5 +9,6 @@
   timestamp: @product.timestamp,
   store_notes_timestamp: @product.store_notes_timestamp,
   picture: @product.picture,
-  status: @product.status
+  status: @product.status,
+  user_id: @product.user_id
 }

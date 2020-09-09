@@ -1,7 +1,7 @@
 # app/views/api/photos/index.json.jb
 @completed.map do |complete|
   {
-    # id: complete.id,
+    id: complete.id,
     timestamp: complete.timestamp,
     quantity: complete.quantity,
   }
