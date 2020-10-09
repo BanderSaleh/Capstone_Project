@@ -31,6 +31,12 @@ class Api::UsersController < ApplicationController
     # render "user.json.jb"
   end
 
+  def currently
+    @user = current_user.User
+    render "user.json.jb"
+  end
+
+
   def index
     @users = User.all
     render "users.json.jb"

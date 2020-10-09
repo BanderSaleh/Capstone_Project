@@ -19,6 +19,7 @@ class Api::ProductsController < ApplicationController
     @product.price = params[:price] || @product.price
     @product.deadline = params[:deadline] || @product.deadline
     @product.store_notes = params[:store_notes] || @product.store_notes
+    @product.timestamp = params[:timestamp] || @product.timestamp
     @product.status = params[:status] || @product.status
     @product.picture = params[:picture] || @product.picture
     @product.user_id = @product.user_id || 1
