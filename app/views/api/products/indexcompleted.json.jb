@@ -9,6 +9,7 @@
     timestamp: complete.timestamp,
     store_notes_timestamp: complete.store_notes_timestamp,
     price: complete.price,
+    deadline: complete.deadline,
     picture: complete.picture,
     status: complete.status,
     user_id: complete.user_id,

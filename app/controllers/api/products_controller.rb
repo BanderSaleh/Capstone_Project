@@ -11,6 +11,36 @@ class Api::ProductsController < ApplicationController
     render "indexcompleted.json.jb"
   end
 
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.store_name = params[:store_name] || @product.store_name
+    @product.product_name = params[:product_name] || @product.product_name
+    @product.quantity = params[:quantity] || @product.quantity
+    @product.price = params[:price] || @product.price
+    @product.deadline = params[:deadline] || @product.deadline
+    @product.store_notes = params[:store_notes] || @product.store_notes
+    @product.status = params[:status] || @product.status
+    @product.picture = params[:picture] || @product.picture
+    @product.user_id = @product.user_id || 1
+    @product.save
+    render "show.json.jb"
+  end
+
+  def updatecompleted
+    @complete = Product.completed.find_by(id: params[:id])
+    @complete.store_name = params[:store_name] || @complete.store_name
+    @complete.product_name = params[:product_name] || @complete.product_name
+    @complete.quantity = params[:quantity] || @complete.quantity
+    @complete.price = params[:price] || @complete.price
+    @complete.deadline = params[:deadline] || @complete.deadline
+    @complete.store_notes = params[:store_notes] || @complete.store_notes
+    @complete.picture = params[:picture] || @complete.picture
+    @complete.user_id = @complete.user_id || 1
+    @complete.status = params[:status] || @complete.status
+    @complete.save
+    render "showcompleted.json.jb"
+  end
+
   def indexcompleted2
     @completed = Completed.all
     render "indexcompleted2.json.jb"
@@ -71,27 +101,9 @@ class Api::ProductsController < ApplicationController
 
   
 
-  def update
-    @product = Product.find_by(id: params[:id])
-    @product.store_name = params[:store_name] || @product.store_name
-    @product.product_name = params[:product_name] || @product.product_name
-    @product.quantity = params[:quantity] || @product.quantity
-    @product.price = params[:price] || @product.price
-    @product.deadline = params[:deadline] || @product.deadline
-    @product.store_notes = params[:store_notes] || @product.store_notes
-    @product.status = params[:status] || @product.status
-    @product.picture = params[:picture] || @product.picture
-    @product.user_id = @product.user_id || 1
-    @product.save
-    render "show.json.jb"
-  end
 
-  def updatecompleted
-    @complete = Completed.find_by(id: params[:id])
-    @complete.status = params[:status] || @complete.status
-    @complete.save
-    render "showcompleted.json.jb"
-  end
+
+
   
 
   def destroy

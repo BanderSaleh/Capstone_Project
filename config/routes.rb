@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get "/users/:id" => "users#show"
     get "/users" => "users#index"
     post "/sessions" => "sessions#create"
+    post "/sessions" => "application#current_user"
 
     get "/products" => "products#index"
     get "/completed" => "products#indexcompleted"

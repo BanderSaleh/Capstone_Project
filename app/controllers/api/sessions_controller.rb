@@ -16,6 +16,12 @@ class Api::SessionsController < ApplicationController
       render json: {}, status: :unauthorized
     end
   end
+
+  def account
+    @user = User.current_user
+    render "user.json.jb"
+  end
+
   
 
 end
